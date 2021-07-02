@@ -82,18 +82,9 @@ echo "Installing Requirements"
 #Requirement Installation 
 apt install software-properties-common -y 
 add-apt-repository ppa:certbot/certbot -y 
- 
+apt install curl -y 
+apt-get install certbot -y 
 
-req_list=("curl" "certbot")
-
-for req in "${req_list[@]}"
-do 
-	if dpkg -s $req | grep -w "Status: install ok installed"  >/dev/null; then
-		echo "$req is installed"
-	else
-		apt install $req -y 
-	fi
-done 
 #Install v2ray UI script 
 bash <(curl -Ls https://blog.sprov.xyz/v2-ui.sh)
 
