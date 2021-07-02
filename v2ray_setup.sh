@@ -91,5 +91,5 @@ echo "Enter Email and Domain"
 #Get SSL Certificate 
 read -p "Enter your email:" email
 read -p "Enter your domain:" domain
-ech "Generate Cerbot"
+echo "Generate Cerbot"
 certbot certonly --standalone --preferred-challenges http --agree-tos --email $email -email-address -d $domain
