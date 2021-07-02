@@ -70,9 +70,9 @@ progress_bar()
 echo "Updating apt and changing timezone"
 #progress_bar 10
 
-#apt-get update -y
+apt-get update -y
 echo "Update Finished"
-#apt-get upgrade -y
+apt-get upgrade -y
 echo "Upgrade finished"
 #timedatectl set-timezone Asia/Yangon
 echo "Timezone Changed"
