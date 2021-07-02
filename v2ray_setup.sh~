@@ -82,7 +82,6 @@ echo "Installing Requirements"
 #Requirement Installation 
 apt install software-properties-common -y 
 add-apt-repository ppa:certbot/certbot -y 
-apt-get install certbot -y
  
 
 req_list=("curl" "certbot")
@@ -96,9 +95,9 @@ do
 	fi
 done 
 #Install v2ray UI script 
-#bash <(curl -Ls https://blog.sprov.xyz/v2-ui.sh)
+bash <(curl -Ls https://blog.sprov.xyz/v2-ui.sh)
 
 #Get SSL Certificate 
 read -p  "Enter your email:" email
 read -p "Enter your domain:" domain
-#sudo certbot certonly --standalone --preferred-challenges http --agree-tos --email $email -email-address -d $domain
+sudo certbot certonly --standalone --preferred-challenges http --agree-tos --email $email -email-address -d $domain
