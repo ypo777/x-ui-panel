@@ -68,7 +68,7 @@ progress_bar()
 #Server Configure 
 
 echo "Updating apt and changing timezone"
-progress_bar 10
+#progress_bar 10
 
 #apt-get update -y
 echo "Update Finished"
@@ -78,13 +78,13 @@ echo "Upgrade finished"
 echo "Timezone Changed"
 
 echo "Installing Requirements"
-progress_bar 10
+#progress_bar 10
 #Requirement Installation 
-#apt install software-properties-common
-#add-apt-repository ppa:certbot/certbot
-#apt-get install certbot
-#apt install software-properties-common
-#add-apt-repository ppa:certbot/certbot
+apt install software-properties-common
+add-apt-repository ppa:certbot/certbot
+apt-get install certbot
+apt install software-properties-common
+add-apt-repository ppa:certbot/certbot
  
 
 req_list=("curl" "certbot")
@@ -95,9 +95,9 @@ do
 		echo "$req is installed"
 	else
 		if [$req == "certbot"]; then 
-			#apt-get install certbot
+			apt-get install certbot
 		else
-			#apt-get install curl
+			apt-get install curl
 		fi
 	fi
 done 

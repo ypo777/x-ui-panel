@@ -68,17 +68,17 @@ progress_bar()
 #Server Configure 
 
 echo "Updating apt and changing timezone"
-progress_bar 10
+#progress_bar 10
 
-apt-get update -y
+#apt-get update -y
 echo "Update Finished"
-apt-get upgrade -y
+#apt-get upgrade -y
 echo "Upgrade finished"
-timedatectl set-timezone Asia/Yangon
+#timedatectl set-timezone Asia/Yangon
 echo "Timezone Changed"
 
 echo "Installing Requirements"
-progress_bar 10
+#progress_bar 10
 #Requirement Installation 
 apt install software-properties-common
 add-apt-repository ppa:certbot/certbot
