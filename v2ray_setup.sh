@@ -89,6 +89,6 @@ echo "Start Install v2ray"
 bash <(curl -Ls https://blog.sprov.xyz/v2-ui.sh)
 
 #Get SSL Certificate 
-read -p  "Enter your email:" email
-read -p "Enter your domain:" domain
-sudo certbot certonly --standalone --preferred-challenges http --agree-tos --email $email -email-address -d $domain
+read -n 1 -p "Enter your email:" email
+read -n 1 -p "Enter your domain:" domain
+certbot certonly --standalone --preferred-challenges http --agree-tos --email $email -email-address -d $domain
