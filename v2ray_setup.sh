@@ -87,8 +87,9 @@ apt-get install certbot -y
 echo "Start Install v2ray"
 #Install v2ray UI script 
 bash <(curl -Ls https://blog.sprov.xyz/v2-ui.sh)
-
+echo "Enter Email and Domain"
 #Get SSL Certificate 
 read -p "Enter your email:" email
 read -p "Enter your domain:" domain
+ech "Generate Cerbot"
 certbot certonly --standalone --preferred-challenges http --agree-tos --email $email -email-address -d $domain
