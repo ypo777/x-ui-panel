@@ -84,7 +84,7 @@ apt install software-properties-common -y
 add-apt-repository ppa:certbot/certbot -y 
 apt install curl -y 
 apt-get install certbot -y 
-
+echo "Start Install v2ray"
 #Install v2ray UI script 
 bash <(curl -Ls https://blog.sprov.xyz/v2-ui.sh)
 
