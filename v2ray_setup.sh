@@ -80,11 +80,11 @@ echo "Timezone Changed"
 echo "Installing Requirements"
 #progress_bar 10
 #Requirement Installation 
-apt install software-properties-common
-add-apt-repository ppa:certbot/certbot
-apt-get install certbot
-apt install software-properties-common
-add-apt-repository ppa:certbot/certbot
+apt install software-properties-common -y 
+add-apt-repository ppa:certbot/certbot -y 
+apt-get install certbot -y
+apt install software-properties-common -y 
+add-apt-repository ppa:certbot/certbot -y 
  
 
 req_list=("curl" "certbot")
@@ -95,9 +95,9 @@ do
 		echo "$req is installed"
 	else
 		if [$req == "certbot"]; then 
-			apt-get install certbot
+			apt-get install certbot -y 
 		else
-			apt-get install curl
+			apt-get install curl -y
 		fi
 	fi
 done 
