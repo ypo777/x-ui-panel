@@ -95,4 +95,4 @@ echo "Generate Cerbot"
 if [-n "$email"]; then 
        read -p "ENter your mail:" email
 fi	
-certbot certonly --standalone --preferred-challenges http --agree-tos --email $email -email-address -d $domain
+#certbot certonly --standalone --preferred-challenges http --agree-tos --email $email -email-address -d $domain
