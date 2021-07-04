@@ -75,7 +75,7 @@ apt-get update -y
 echo "Update Finished"
 apt-get upgrade -y
 echo "Upgrade finished"
-#timedatectl set-timezone Asia/Yangon
+timedatectl set-timezone Asia/Yangon
 echo "Timezone Changed"
 
 echo "Installing Requirements"
