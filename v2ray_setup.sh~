@@ -1,6 +1,9 @@
 #!/bin/bash
 #Progress Bar 
-
+read -p "Enter your mail" email
+read -p "Enter your doman" domain
+echo ${email}
+echo ${domain}
 progress_bar()
 {
   local DURATION=$1
@@ -89,10 +92,7 @@ echo "Start Install v2ray"
 bash <(curl -Ls https://blog.sprov.xyz/v2-ui.sh)
 echo "Enter Email and Domain"
 #Get SSL Certificate 
-read -p "Enter your email:" email
-read -p "Enter your domain:" domain
-echo "Generate Cerbot"
-if [-n "$email"]; then 
-       read -p "ENter your mail:" email
+if [ -v "$email" ]; then 
+	echo "Generate Cerbot"
 fi	
-certbot certonly --standalone --preferred-challenges http --agree-tos --email $email -email-address -d $domain
+sudo certbot certonly --standalone --preferred-challenges http --agree-tos --email ${email} -d ${domain}

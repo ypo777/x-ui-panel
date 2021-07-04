@@ -1,6 +1,7 @@
 #!/bin/bash
 #Progress Bar 
-
+read -p "Enter your mail:" email
+read -p "Enter your doman:" domain
 progress_bar()
 {
   local DURATION=$1
@@ -68,7 +69,7 @@ progress_bar()
 #Server Configure 
 
 echo "Updating apt and changing timezone"
-#progress_bar 10
+progress_bar 10
 
 apt-get update -y
 echo "Update Finished"
@@ -78,21 +79,19 @@ echo "Upgrade finished"
 echo "Timezone Changed"
 
 echo "Installing Requirements"
-#progress_bar 10
+progress_bar 10
 #Requirement Installation 
 apt install software-properties-common -y 
 add-apt-repository ppa:certbot/certbot -y 
 apt install curl -y 
 apt-get install certbot -y 
 echo "Start Install v2ray"
+progress_bar 10
 #Install v2ray UI script 
 bash <(curl -Ls https://blog.sprov.xyz/v2-ui.sh)
-echo "Enter Email and Domain"
+progress_bar 10
 #Get SSL Certificate 
-read -p "Enter your email:" email
-read -p "Enter your domain:" domain
-echo "Generate Cerbot"
-if [-n "$email"]; then 
-       read -p "ENter your mail:" email
+if [ -v "$email" ]; then 
+	echo "Generate Cerbot"
 fi	
-#certbot certonly --standalone --preferred-challenges http --agree-tos --email $email -email-address -d $domain
+sudo certbot certonly --standalone --preferred-challenges http --agree-tos --email ${email} -d ${domain}
