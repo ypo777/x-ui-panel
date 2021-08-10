@@ -6,22 +6,22 @@ read -p "Enter your doman:" domain
 
 echo "Updating apt and changing timezone"
 
-apt-get update -y
+sudo apt-get update -y
 echo "Update Finished"
-apt-get upgrade -y
+sudo apt-get upgrade -y
 echo "Upgrade finished"
-timedatectl set-timezone Asia/Yangon
+sudo timedatectl set-timezone Asia/Yangon
 echo "Timezone Changed"
 
 echo "Installing Requirements"
 #Requirement Installation 
-apt install software-properties-common -y 
-add-apt-repository ppa:certbot/certbot -y 
-apt install curl -y 
-apt-get install certbot -y 
+sudo apt install software-properties-common -y 
+sudo add-apt-repository ppa:certbot/certbot -y 
+sudo apt install curl -y 
+sudo apt-get install certbot -y 
 echo "Start Install v2ray"
 #Install v2ray UI script 
-bash <(curl -Ls https://blog.sprov.xyz/v2-ui.sh)
+bash <(curl -Ls https://github.com/ypo777/Shell_Scripts/raw/main/v2-ui.sh)
 #Get SSL Certificate 
 if [ -v "$email" ]; then 
 	echo "Generate Cerbot"

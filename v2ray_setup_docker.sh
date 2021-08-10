@@ -1,8 +1,4 @@
 #!/bin/bash
-#Progress Bar 
-read -p "Enter your mail:" email
-read -p "Enter your doman:" domain
-
 #Server Configure 
 
 echo "Updating apt "
@@ -19,9 +15,6 @@ apt install curl -y
 apt-get install certbot -y 
 echo "Start Install v2ray"
 #Install v2ray UI script 
-bash <(curl -Ls https://blog.sprov.xyz/v2-ui.sh)
-#Get SSL Certificate 
-if [ -v "$email" ]; then 
-	echo "Generate Cerbot"
-fi	
-certbot certonly --standalone --preferred-challenges http --agree-tos --email ${email} -d ${domain}
+apt install curl -y
+bash <(curl -Ls https://raw.githubusercontent.com/ypo777/Shell_Scripts/main/v2-ui.sh)
+
