@@ -18,6 +18,10 @@ git clone https://github.com/ypo777/Shell_Scripts.git
 chmod u+x v2ray_setup.sh
 ./v2ray_setup.sh
 ```
+##TODO
+- Make Docker File
+- Instruction for Client Side Setup
+
 ## References
 - [v2ray websocket](https://privacymelon.com/how-to-setup-v2ray-ws-tls-cdn/)
 
