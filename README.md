@@ -2,7 +2,7 @@
 
 ## Requirements
 - Domain Name
-- Local Machine or VPS Running Ubuntu 21.04
+- VPS Running Ubuntu 21.04
 - [CloudFlare Account For DNS Service](https://dash.cloudflare.com/sign-up)
 - For Docker Scripts - [Install Docker on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 
