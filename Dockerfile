@@ -8,4 +8,3 @@ RUN  apt-get update \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 VOLUME  [  "/etc/x-ui"  ]
 EXPOSE  54321
->>>>>>> 974cc203dc3b7aaa00f16194611b86381dd99c5b
