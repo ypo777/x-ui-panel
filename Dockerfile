@@ -1,7 +1,10 @@
-FROM ubuntu:21.04
-
-COPY v2ray_setup_docker.sh /v2ray_setup_docker.sh
-ENV ENV /v2ray_setup_docker.sh
-RUN chmod +x /v2ray_setup_docker.sh
-RUN ./v2ray_setup_docker.sh
-CMD "/bin/sh"
+FROM  jrei/systemd-debian
+ENV  SHELL /bin/bash
+RUN  apt-get update \
+    && apt-get install -y wget procps \
+    && wget https://raw.githubusercontent.com/sprov065/x-ui/main/install.sh --no-check-certificate \
+    && bash ./install.sh \
+    && rm ./install.sh \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+VOLUME  [  "/etc/x-ui"  ]
+EXPOSE  54321
