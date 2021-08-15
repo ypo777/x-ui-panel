@@ -1,4 +1,4 @@
-# Scripts for Installation v2ray VPN on Ubuntu 21.04
+# Scripts for Installation v2ray VPN 
 > Docker Based on https://github.com/thesadboy/x-ui-docker
 
 > V2ray Setup Based on https://privacymelon.com/how-to-setup-v2ray-ws-tls-cdn/
@@ -55,17 +55,20 @@ sudo certbot certonly --standalone --preferred-challenges http --agree-tos --ema
 ##### Configuration
 - Default Port for v2-ui panel : **http://YOURIP:65432**
 - Admin User & Password: both "admin"
+
 <a name="client"/>
+
 ##### Installing v2ray to Client Devices
-**Android**
+
+###### Android
 - [v2RayNG](https://play.google.com/store/apps/details?id=com.v2ray.ang&hl=en&gl=US)
 - [NapsternetV](https://play.google.com/store/apps/details?id=com.napsternetlabs.napsternetv&hl=en&gl=US)
 
-**iOS**
+###### iOS
 - [ShadowRocket](https://apps.apple.com/us/app/shadowrocket/id932747118)
 - [FairVPN](https://apps.apple.com/us/app/fair-vpn/id1533873488)
 
-**Windows & MacOS**
+###### Windows & MacOS
 - [Qv2ray](https://qv2ray.net/)
 
 
