@@ -1,0 +1,43 @@
+---
+- hosts : master
+  become : yes
+  tasks:
+    - name : Update Packages
+      become: true
+      apt:
+        update_cache: yes
+        upgrade: yes
+
+    - name: Software Properties Common
+      become: true
+      apt:
+        name: software-properties-common
+        state: latest
+
+    - name: Install apt requirements
+      become: true
+      ansible.builtin.apt_repository:
+        repo: 'ppa:certbot/certbot'
+        codename: trusty
+    
+    - name: Install Certbot,Curl
+      become: yes
+      apt:
+        name:
+          - curl
+          - certbot
+        state: latest
+        update_cache: true
+
+    - name: Set Timezone to Asia/Yangon
+      community.general.timezone:
+        name: Asia/Yangon 
+
+    - name: Download v2ray Script
+      ansible.builtin.get_url:
+        url: https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh
+        dest: /root/install.sh
+
+    - name: Run v2ray script 
+      ansible.builtin.shell:
+        cmd: bash /root/install.sh
