@@ -1,0 +1,24 @@
+---
+- name: Create VPS
+  hosts: localhost
+  vars_files:
+    - ./group_vars/v2ray/vars
+
+  tasks:
+    - name: Creating VPS
+      community.general.linode_v4:
+        label: "{{ label }}{{ 100 |random }}"
+        access_token: "{{ token }}"
+        type: g6-standard-1
+        region: eu-west
+        image: linode/ubuntu21.04
+        root_pass: "{{ password }}"
+        authorized_keys: "{{ ssh_keys }}"
+        group: example_group
+        tags: example_group
+        state: present
+      register: my_linode
+
+    - name: Info about Linode Instance
+      debug:
+        msg: "ID is {{ my_linode.instance.id }} IP is {{ my_linode.ipv4 }}"
