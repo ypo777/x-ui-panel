@@ -53,7 +53,7 @@ sudo certbot certonly --standalone --preferred-challenges http --agree-tos --ema
 <a name="admin" />
 
 ##### Configuration
-- Default Port for v2-ui panel : **http://YOURIP:65432**
+- Default Port for v2-ui panel : **http://YOURIP:54321**
 - Admin User & Password: both "admin"
 
 <a name="client"/>
