@@ -28,10 +28,9 @@
           - certbot
         state: latest
         update_cache: true
-
-    - name: Set Timezone to Asia/Yangon
-      community.general.timezone:
-        name: Asia/Yangon 
+    - name: Set timezone to Asia/Yangon
+      timezone:
+        name: Asia/Yangon
 
     - name: Download v2ray Script
       ansible.builtin.get_url:
