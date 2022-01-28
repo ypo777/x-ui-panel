@@ -28,7 +28,7 @@
 ### 2. Ubuntu
 Using Bash Script: 
 ```
-bash <(curl -s )
+bash <(curl -s https://raw.githubusercontent.com/ypo777/x-ui-panel/main/Bash/v2ray_setup.sh )
 ```
 
 Using Ansible:
