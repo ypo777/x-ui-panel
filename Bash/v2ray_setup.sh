@@ -16,7 +16,7 @@ echo "Timezone Changed"
 echo "Installing Requirements"
 #Requirement Installation
 sudo apt install software-properties-common -y
-sudo add-apt-repository ppa:certbot/certbot -y
+#sudo add-apt-repository ppa:certbot/certbot -y
 sudo apt install curl -y
 sudo apt-get install certbot -y
 echo "Start Install v2ray"

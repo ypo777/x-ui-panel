@@ -14,11 +14,11 @@
         name: software-properties-common
         state: latest
 
-    - name: Install apt requirements
-      become: true
-      ansible.builtin.apt_repository:
-        repo: 'ppa:certbot/certbot'
-        codename: trusty
+    #- name: Install apt requirements
+   #  become: true
+      #ansible.builtin.apt_repository:
+        #repo: 'ppa:certbot/certbot'
+        #codename: trusty
     
     - name: Install Certbot,Curl
       become: yes

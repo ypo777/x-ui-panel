@@ -10,29 +10,35 @@
 - [CloudFlare Account For DNS Service](https://dash.cloudflare.com/sign-up)
 
 ### Table of Contents
-+ [Ubuntu Machines](#ubuntu)
-+ [Docker Image](#docker)
-+ [Getting SSL](#ssl)
-+ [Admin Panel Configuration](#admin)
-+ [Client Devices](#client)
+1. [Getting Started](#1-getting-started)
+2. [Ubuntu](#ubuntu)
+3. [Docker Image](#docker)
+5. [Getting SSL](#ssl)
+6. [Admin Panel Configuration](#admin)
+7. [Client Devices](#client)
+
+<a name="getstart"/>
+
+### 1. Getting Started
+- Point Your NameServers to CloudFlare
+- Point Your VPS IP to Your Domain Name
 
 <a name="ubuntu"/>
 
-##### Get Started for Ubuntu Machine
-- Point Your NameServers to CloudFlare
-- Point Your VPS IP to Your Domain Name
-- Clone repo to your machine
+### 2. Ubuntu
+Using Bash Script: 
 ```
-git clone https://github.com/ypo777/Shell_Scripts.git
+bash <(curl -s )
 ```
-- Give permission to script you want to run
-```
-chmod u+x v2ray_setup.sh
-./v2ray_setup.sh
-```
+
+Using Ansible:
+ - add your IP Address, Username And SSH Keys in Inventory
+ ```
+ ansible-playbook v2raysetup.yaml
+ ``` 
 <a name="docker"/>
 
-##### Get Started for Docker Image
+### 3. Docker Image
 - Pull docker image
 ```
 docker pull ypo007/x-ui
@@ -44,7 +50,7 @@ docker run --restart=always --name x-ui -d -p 54321:54321 -p 8000-8010:8000-8010
 
 <a name="ssl"/>
 
-##### Getting SSL Certificate
+### 4. Getting SSL Certificate
 ```
 sudo certbot certonly --standalone --preferred-challenges http --agree-tos --email your-email-address -d test.example.com
 ```
@@ -52,10 +58,21 @@ sudo certbot certonly --standalone --preferred-challenges http --agree-tos --ema
 
 <a name="admin" />
 
-##### Configuration
+### Configuration
 - Default Port for v2-ui panel : **http://YOURIP:54321**
 - Admin User & Password: both "admin"
-
+- Add a new user: 
+    - Go to Inbound List
+    - Click ``` + ``` button
+    - Enter your desired name in ```remark```
+    - Select  ```protocol: vmess```
+    - Listen IP ```yourIP```
+    - Port : ```your desired port```
+    - Transmission: ```ws``` 
+    - Open TLS Option
+    - Enter your domain name
+    - Add Certificated you got from [SSL Certificate](#4-getting-ssl-certificate)
+    - If you don't need , close ```sniffing``` option
 <a name="client"/>
 
 ##### Installing v2ray to Client Devices
@@ -73,7 +90,5 @@ sudo certbot certonly --standalone --preferred-challenges http --agree-tos --ema
 
 
 ###### TODO
-- Instruction for Admin Panel and new user setup
-- Instruction for Client Side Setup
-
+- Add Timezone Selection 
 
