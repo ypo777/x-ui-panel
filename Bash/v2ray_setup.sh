@@ -2,6 +2,7 @@
 #Progress Bar
 read -p "Enter your mail:" email
 read -p "Enter your doman:" domain
+read -p "Enter your Timezone": timezone_value
 #Server Configure
 
 echo "Updating apt and changing timezone"
@@ -10,7 +11,7 @@ sudo apt-get update -y
 echo "Update Finished"
 sudo apt-get upgrade -y
 echo "Upgrade finished"
-sudo timedatectl set-timezone Asia/Yangon
+sudo timedatectl set-timezone ${timezone_value}
 echo "Timezone Changed"
 
 echo "Installing Requirements"
